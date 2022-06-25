@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{ "title":"Главная"})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="main">
+				<section class="first-screen">
+					<div class="first-screen__container">
+						<div class="first-screen__content">
+							<h2 class="first-screen__title title">Терапевтический видеокурс<br> "Здоровая поясница"</h2>
+							<p class="first-screen__slogan">Вернитесь к полноценной жизни без боли с помощью домашних тренировок от врачей-реабилитологов</p>
+							<a href="" class="first-screen__btn btn btn--blue">Подробнее о курсе</a>
+						</div>
+						<img src="@img/first-screen-block/image.png" class="first-screen__image" alt="Видеокомплекс 'Здоровая поясница'">
+					</div>
+				</section>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>
+
+
+
+<!-- <button class="btn">Пройти курс</button>
+<button class="btn btn--black">Пройти курс</button>
+<button class="btn btn--blue">Пройти курс</button>
+<button class="btn btn--blue-outline">Пройти курс</button> -->

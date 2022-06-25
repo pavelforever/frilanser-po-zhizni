@@ -1,0 +1,55 @@
+.btn {
+	font-family: Commissioner;
+	font-weight: 500;
+	@include adaptiveValue('font-size', 16, 12, 1600, 768, 1);
+	line-height: math.div(20, 16);
+
+	display: inline-flex;
+	justify-content: center;
+	@include adaptiveValue('min-width', 190, 130, 1600, 768, 1);
+	@include adaptiveValue('padding-top', 18, 12, 1600, 768, 1);
+	@include adaptiveValue('padding-bottom', 18, 12, 1600, 768, 1);
+	padding-left: rem(20);
+	padding-right: rem(20);
+
+	border: 2px solid;
+	border-radius: rem(30);
+	transition: all 0.2s ease 0s;
+
+	@media (any-hover: hover) {
+		&:hover {
+			transform: scale(1.02);
+			box-shadow: 0 0 7px rgba(0, 0, 0, 0.25);
+		}
+	}
+
+	&--black {
+		color: $white;
+		background-color: $mainColor;
+		border: 2px solid $mainColor;
+	}
+
+	&--blue {
+		background-color: $blue;
+		color: $white;
+		border: 2px solid $blue;
+	}
+
+	&--blue-outline {
+		border: 2px solid $blue;
+		color: $blue;
+	}
+}
+
+//========================================================================================================================================================
+
+.title {
+	font-family: Commissioner;
+	font-weight: 800;
+	@include adaptiveValue('font-size', 36, 20);
+	line-height: math.div(44, 36);
+
+	@media (max-width: $mobile) {
+		text-align: center;
+	}
+}
