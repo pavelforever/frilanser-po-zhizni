@@ -8,7 +8,7 @@
 		left: 0;
 		width: 100%;
 		background-color: $white;
-		z-index: 1;
+		z-index: 10;
 	}
 
 	// .header__container
@@ -25,11 +25,11 @@
 
 	// .header__logo
 	&__logo {
-		img {
-			@media (max-width: $mobile) {
-				max-height: rem(23);
-			}
-		}
+		// img {
+		// 	@media (max-width: $mobile) {
+		// 		max-height: rem(40);
+		// 	}
+		// }
 	}
 
 	// .header__btn
@@ -38,7 +38,7 @@
 			position: fixed;
 			bottom: rem(15);
 			right: rem(15);
-			z-index: 1;
+			z-index: 10;
 			background-color: $white;
 		}
 	}

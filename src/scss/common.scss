@@ -38,6 +38,7 @@
 	&--blue-outline {
 		border: 2px solid $blue;
 		color: $blue;
+		background-color: inherit;
 	}
 }
 
@@ -48,6 +49,15 @@
 	font-weight: 800;
 	@include adaptiveValue('font-size', 36, 20);
 	line-height: math.div(44, 36);
+
+	@media (max-width: $mobile) {
+		text-align: center;
+	}
+}
+
+.text {
+	@include adaptiveValue('font-size', 16, 12);
+	@include adaptiveValue('line-height', 20, 22);
 
 	@media (max-width: $mobile) {
 		text-align: center;
