@@ -107,14 +107,6 @@
 
 	// .second-block__buttons
 	&__buttons {
-		display: flex;
-		flex-wrap: wrap;
-		gap: rem(15);
-		row-gap: rem(15);
-
-		@media (max-width: $mobile) {
-			row-gap: rem(10);
-		}
 	}
 
 	// .second-block__image
@@ -134,16 +126,6 @@
 .thirth-block {
 	@include adaptiveValue('padding-top', 120, 40, 1600, 767.98, 1);
 	@include adaptiveValue('padding-bottom', 120, 40, 1600, 767.98, 1);
-	// position: relative;
-	// overflow: hidden;
-
-	// &::after {
-	// 	content: url('@img/thirth-block/decor.svg');
-	// 	position: absolute;
-	// 	top: 0;
-	// 	left: 0;
-	// 	transform: translateY(-10%);
-	// }
 
 	// .thirth-block__container
 	&__container {
@@ -434,37 +416,10 @@
 
 	// .sixth-block__price
 	&__price {
-		&:not(:last-child) {
-			@include adaptiveValue('margin-bottom', 40, 20, 1600, 767.98, 1);
-		}
 	}
 
 	// .sixth-block__buttons
 	&__buttons {
-		display: flex;
-		flex-wrap: wrap;
-		gap: rem(15);
-		row-gap: rem(15);
-
-		@media (max-width: $mobile) {
-			row-gap: rem(10);
-		}
-	}
-}
-
-.price-sixth-block {
-	// .price-sixth-block__price
-	&__price {
-		font-weight: 700;
-		@include adaptiveValue('font-size', 20, 12);
-		line-height: math.div(24, 20);
-	}
-
-	// .price-sixth-block__info
-	&__info {
-		font-weight: 500;
-		font-size: rem(12);
-		line-height: math.div(15, 12);
 	}
 }
 
@@ -612,5 +567,161 @@
 		font-weight: 500;
 		text-align: center;
 		color: #000000;
+	}
+}
+
+//========================================================================================================================================================
+
+.faq-block {
+	@include adaptiveValue('padding-top', 40, 30, 1600, 767.98, 1);
+	@include adaptiveValue('padding-bottom', 60, 20, 1600, 767.98, 1);
+
+	// .faq-block__container
+	&__container {
+	}
+
+	// .faq-block__title
+	&__title {
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 60, 35, 1600, 767.98, 1);
+		}
+	}
+
+	// .faq-block__body
+	&__body {
+	}
+
+	// .faq-block__content
+	&__content {
+	}
+}
+
+.faq-spollers {
+	// .faq-spollers__item
+	&__item {
+	}
+
+	// .faq-spollers__title
+	&__title {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border: 1px solid #eeeeee;
+		border-radius: rem(5);
+		padding: rem(16) rem(24);
+		width: 100%;
+		transition: all 0.3s ease 0s;
+
+		&:not(:last-child) {
+			margin-bottom: rem(12);
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+			}
+		}
+
+		@media (max-width: $mobile) {
+			padding: rem(12);
+		}
+
+		span {
+			font-weight: 600;
+			@include adaptiveValue('font-size', 16, 12);
+			line-height: math.div(20, 16);
+			text-transform: uppercase;
+			text-align: left;
+			color: $blue;
+		}
+
+		svg {
+			transition: all 0.2s ease 0s;
+			@media (max-width: $mobile) {
+				display: none;
+			}
+		}
+
+		&._spoller-active {
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+			svg {
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	// .faq-spollers__body
+	&__body {
+		padding: rem(4) rem(24) rem(16);
+		@include adaptiveValue('font-size', 16, 12);
+		line-height: math.div(20, 16);
+
+		@media (max-width: $mobile) {
+			padding: rem(0) rem(12) rem(12);
+		}
+	}
+}
+
+//========================================================================================================================================================
+
+.promo-block {
+	@include adaptiveValue('padding-top', 60, 20, 1600, 767.98, 1);
+	@include adaptiveValue('padding-bottom', 120, 40, 1600, 767.98, 1);
+
+	// .promo-block__container
+	&__container {
+	}
+
+	// .promo-block__body
+	&__body {
+		background-color: #cde2f5;
+		border-radius: rem(20);
+		display: flex;
+		gap: rem(70);
+		align-items: center;
+		padding: rem(30) rem(65);
+
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			padding: rem(20) rem(5) rem(32);
+			gap: rem(20);
+		}
+	}
+
+	// .promo-block__image
+	&__image {
+		flex: 1 0 40%;
+
+		@media (max-width: $mobile) {
+			padding: 0 rem(50);
+		}
+
+		img {
+			max-width: 100%;
+		}
+	}
+
+	// .promo-block__content
+	&__content {
+		@media (max-width: $mobile) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	// .promo-block__caption
+	&__caption {
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 28, 16, 1600, 767.98, 1);
+		}
+	}
+
+	// .promo-block__price
+	&__price {
+	}
+
+	// .promo-block__buttons
+	&__buttons {
 	}
 }

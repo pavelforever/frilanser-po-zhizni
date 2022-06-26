@@ -106,3 +106,36 @@
 		background-color: #eeeeee;
 	}
 }
+
+//========================================================================================================================================================
+
+.buttons-block {
+	display: flex;
+	flex-wrap: wrap;
+	gap: rem(15);
+	row-gap: rem(15);
+
+	@media (max-width: $mobile) {
+		row-gap: rem(10);
+	}
+}
+
+.price-block {
+	&:not(:last-child) {
+		@include adaptiveValue('margin-bottom', 40, 20, 1600, 767.98, 1);
+	}
+
+	// .price--block__price
+	&__price {
+		font-weight: 700;
+		@include adaptiveValue('font-size', 20, 12);
+		line-height: math.div(24, 20);
+	}
+
+	// .price-block__info
+	&__info {
+		font-weight: 500;
+		font-size: rem(12);
+		line-height: math.div(15, 12);
+	}
+}
