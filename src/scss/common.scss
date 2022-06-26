@@ -1,14 +1,14 @@
 .btn {
 	font-family: Commissioner;
 	font-weight: 500;
-	@include adaptiveValue('font-size', 16, 12, 1600, 768, 1);
+	@include adaptiveValue('font-size', 16, 12, 1600, 767.98, 1);
 	line-height: math.div(20, 16);
 
 	display: inline-flex;
 	justify-content: center;
-	@include adaptiveValue('min-width', 190, 130, 1600, 768, 1);
-	@include adaptiveValue('padding-top', 18, 12, 1600, 768, 1);
-	@include adaptiveValue('padding-bottom', 18, 12, 1600, 768, 1);
+	@include adaptiveValue('min-width', 190, 130, 1600, 767.98, 1);
+	@include adaptiveValue('padding-top', 18, 12, 1600, 767.98, 1);
+	@include adaptiveValue('padding-bottom', 18, 12, 1600, 767.98, 1);
 	padding-left: rem(20);
 	padding-right: rem(20);
 
@@ -38,7 +38,7 @@
 	&--blue-outline {
 		border: 2px solid $blue;
 		color: $blue;
-		background-color: inherit;
+		background: inherit;
 	}
 }
 
@@ -53,6 +53,20 @@
 	@media (max-width: $mobile) {
 		text-align: center;
 	}
+
+	&.center {
+		text-align: center;
+	}
+}
+
+.caption {
+	font-weight: 700;
+	@include adaptiveValue('font-size', 24, 16);
+	line-height: math.div(29, 24);
+
+	@media (max-width: $mobile) {
+		text-align: center;
+	}
 }
 
 .text {
@@ -61,5 +75,34 @@
 
 	@media (max-width: $mobile) {
 		text-align: center;
+	}
+}
+
+//========================================================================================================================================================
+
+.circle {
+	@include adaptiveValue('width', 100, 60, 1600, 767.98, 1);
+	@include adaptiveValue('height', 100, 60, 1600, 767.98, 1);
+	border-radius: 50%;
+	position: relative;
+
+	&--purple {
+		background-color: #f5cee9;
+	}
+
+	&--green {
+		background-color: #c8d7c2;
+	}
+
+	&--blue {
+		background-color: #cde2f5;
+	}
+
+	&--blue2 {
+		background-color: #96bee2;
+	}
+
+	&--gray {
+		background-color: #eeeeee;
 	}
 }
