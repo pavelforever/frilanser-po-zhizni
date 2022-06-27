@@ -99,15 +99,19 @@ body::after {
 	&--video {
 		max-width: 70vw;
 		padding: rem(50);
+
+		@media (max-width: $mobile) {
+			max-width: 95vw;
+			padding: rem(40) rem(10) rem(10);
+		}
 	}
 }
 
 .popup__wrap {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-
 	&--thanks {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		margin-bottom: rem(90);
 	}
 }
@@ -134,4 +138,9 @@ body::after {
 	align-items: center;
 	top: rem(20);
 	right: rem(20);
+
+	@media (max-width: $mobile) {
+		top: rem(10);
+		right: rem(10);
+	}
 }

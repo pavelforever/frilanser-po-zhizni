@@ -5,7 +5,7 @@
 	<title>Главная</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="css/style.min.css?_v=20220627113403">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220627154333">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -104,7 +104,7 @@
 				</div>
 			</section>
 
-			<section class="fourth-block">
+			<section class="fourth-block" data-watch data-watch-threshold="0.7">
 				<div class="fourth-block__container">
 					<h2 class="fourth-block__title title center">Что вас ждет в <br> нашем курсе </h2>
 					<div class="fourth-block__body">
@@ -373,11 +373,11 @@
 				</button>
 				<div class="popup__body">
 					<h2 class="popup__title title center">Получить доступ к курсу</h2>
-					<form class="form">
-						<input type="text" class="form__input" placeholder="Введите ваше имя" />
-						<input type="email" class="form__input" placeholder="Введите ваше E-mail" />
-						<input type="tel" class="form__input" placeholder="Введите ваш телефон" />
-						<button type="submit" data-popup="#thanks" class="form__button btn btn--blue">Оплатить курс</button>
+					<form class="form-popup">
+						<input type="text" class="form-popup__input" placeholder="Введите ваше имя" />
+						<input type="email" class="form-popup__input" placeholder="Введите ваше E-mail" />
+						<input type="tel" class="form-popup__input" placeholder="Введите ваш телефон" />
+						<button type="submit" data-popup="#thanks" class="form-popup__button btn btn--blue">Оплатить курс</button>
 					</form>
 				</div>
 			</div>
@@ -392,7 +392,7 @@
 						<path d="M16 1.61143L14.3886 0L8 6.38857L1.61143 0L0 1.61143L6.38857 8L0 14.3886L1.61143 16L8 9.61143L14.3886 16L16 14.3886L9.61143 8L16 1.61143Z" fill="#0E0F11" />
 					</svg>
 				</button>
-				<div class="popup__body popup__body--thanks">
+				<div class="popup__body">
 					<div class="popup__wrap popup__wrap--thanks">
 						<h2 class="popup__title title center">Спасибо за оплату!</h2>
 						<p class="popup__text popup__text--thanks text">Весь комплекс вы можете получить кликнув по конопке </p>
@@ -477,7 +477,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20220627113403"></script>
+	<script src="js/app.min.js?_v=20220627154333"></script>
 </body>
 
 </html>

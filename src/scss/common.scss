@@ -142,7 +142,7 @@
 
 //========================================================================================================================================================
 
-.form {
+.form-popup {
 	display: flex;
 	flex-direction: column;
 	gap: rem(16);
@@ -150,7 +150,7 @@
 	margin: 0 auto;
 	@include adaptiveValue('margin-top', 25, 40, 1600, 767.98, 1);
 
-	// .form__input
+	// .form-popup__input
 	&__input {
 		font-weight: 500;
 		@include adaptiveValue('font-size', 16, 12);
@@ -173,8 +173,17 @@
 		}
 	}
 
-	// .form__button
+	// .form-popup__button
 	&__button {
 		margin-top: rem(16);
+	}
+}
+
+section,
+header {
+	transition: all 0.3s ease 0s;
+
+	&.bg-green {
+		background-color: #c8d7c2;
 	}
 }
