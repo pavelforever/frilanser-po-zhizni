@@ -170,7 +170,7 @@
 
 	// .thirth-block__body
 	&__body {
-		width: 90%;
+		max-width: 90%;
 		margin: 0 auto;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -178,7 +178,7 @@
 		@include adaptiveValue('row-gap', 100, 20);
 
 		@media (max-width: $mobile) {
-			width: 100%;
+			max-width: 100%;
 		}
 	}
 
@@ -226,8 +226,8 @@
 
 .fourth-block {
 	background-color: $green;
-	@include adaptiveValue('padding-top', 80, 40, 1600, 767.98, 1);
-	@include adaptiveValue('padding-bottom', 86, 72, 1600, 767.98, 1);
+	@include adaptiveValue('padding-top', 100, 40, 1600, 767.98, 1);
+	@include adaptiveValue('padding-bottom', 100, 40, 1600, 767.98, 1);
 
 	// .fourth-block__container
 	&__container {
@@ -272,11 +272,16 @@
 
 	// .fourth-block__body
 	&__body {
-		max-width: percent(750, 1110);
+		max-width: 70%;
 		margin: 0 auto;
 		display: flex;
 		align-items: center;
-		@include adaptiveValue('gap', 125, 25, 1600, 767.98, 1);
+		justify-content: space-between;
+		gap: rem(35);
+
+		@media (max-width: $tablet) {
+			max-width: 85%;
+		}
 
 		@media (max-width: $mobile) {
 			flex-direction: column;
@@ -286,7 +291,6 @@
 
 	// .fourth-block__image
 	&__image {
-		flex: 1 0 percent(200, 750);
 		img {
 			max-width: 100%;
 		}
@@ -294,12 +298,13 @@
 
 	// .fourth-block__content
 	&__content {
+		flex: 0 0 58%;
 	}
 
 	// .fourth-block__caption
 	&__caption {
 		&:not(:last-child) {
-			@include adaptiveValue('margin-bottom', 28, 16, 1600, 767.98, 1);
+			@include adaptiveValue('margin-bottom', 25, 15, 1600, 767.98, 1);
 		}
 	}
 
@@ -311,8 +316,8 @@
 //========================================================================================================================================================
 
 .fifth-block {
-	@include adaptiveValue('padding-top', 140, 40, 1600, 767.98, 1);
-	@include adaptiveValue('padding-bottom', 140, 48, 1600, 767.98, 1);
+	@include adaptiveValue('padding-top', 100, 40, 1600, 767.98, 1);
+	@include adaptiveValue('padding-bottom', 100, 40, 1600, 767.98, 1);
 
 	// .fifth-block__container
 	&__container {
@@ -320,11 +325,16 @@
 
 	// .fifth-block__body
 	&__body {
-		max-width: percent(750, 1110);
+		max-width: 70%;
 		margin: 0 auto;
 		display: flex;
 		align-items: center;
-		@include adaptiveValue('gap', 125, 25, 1600, 767.98, 1);
+		justify-content: space-between;
+		gap: rem(35);
+
+		@media (max-width: $tablet) {
+			max-width: 85%;
+		}
 
 		@media (max-width: $mobile) {
 			flex-direction: column-reverse;
@@ -334,12 +344,13 @@
 
 	// .fifth-block__content
 	&__content {
+		flex: 0 0 58%;
 	}
 
 	// .fifth-block__caption
 	&__caption {
 		&:not(:last-child) {
-			@include adaptiveValue('margin-bottom', 28, 16, 1600, 767.98, 1);
+			@include adaptiveValue('margin-bottom', 25, 15, 1600, 767.98, 1);
 		}
 	}
 
@@ -349,8 +360,6 @@
 
 	// .fifth-block__image
 	&__image {
-		flex: 1 0 percent(200, 750);
-
 		img {
 			max-width: 100%;
 		}
@@ -360,8 +369,8 @@
 //========================================================================================================================================================
 
 .sixth-block {
-	@include adaptiveValue('padding-top', 140, 40, 1600, 767.98, 1);
-	@include adaptiveValue('padding-bottom', 140, 45, 1600, 767.98, 1);
+	@include adaptiveValue('padding-top', 100, 40, 1600, 767.98, 1);
+	@include adaptiveValue('padding-bottom', 100, 40, 1600, 767.98, 1);
 	background-color: #cde2f5;
 
 	// .sixth-block__container
@@ -370,11 +379,16 @@
 
 	// .sixth-block__body
 	&__body {
-		max-width: percent(750, 1110);
+		max-width: 70%;
 		margin: 0 auto;
 		display: flex;
 		align-items: center;
-		@include adaptiveValue('gap', 50, 25, 1600, 767.98, 1);
+		justify-content: space-between;
+		gap: rem(35);
+
+		@media (max-width: $tablet) {
+			max-width: 85%;
+		}
 
 		@media (max-width: $mobile) {
 			flex-direction: column;
@@ -384,8 +398,6 @@
 
 	// .sixth-block__image
 	&__image {
-		flex: 1 0 percent(295, 750);
-
 		img {
 			max-width: 100%;
 		}
@@ -393,6 +405,7 @@
 
 	// .sixth-block__content
 	&__content {
+		flex: 0 0 58%;
 		@media (max-width: $mobile) {
 			display: flex;
 			flex-direction: column;
@@ -403,7 +416,7 @@
 	// .sixth-block__caption
 	&__caption {
 		&:not(:last-child) {
-			@include adaptiveValue('margin-bottom', 28, 16, 1600, 767.98, 1);
+			@include adaptiveValue('margin-bottom', 25, 15, 1600, 767.98, 1);
 		}
 	}
 
@@ -425,9 +438,9 @@
 
 //========================================================================================================================================================
 
-.author-block {
-	@include adaptiveValue('padding-top', 40, 10, 1600, 767.98, 1);
-	@include adaptiveValue('padding-bottom', 40, 30, 1600, 767.98, 1);
+.author {
+	@include adaptiveValue('padding-top', 100, 40, 1600, 767.98, 1);
+	@include adaptiveValue('padding-bottom', 100, 40, 1600, 767.98, 1);
 
 	// .author-block__container
 	&__container {
@@ -435,11 +448,16 @@
 
 	// .author-block__body
 	&__body {
-		max-width: 90%;
+		max-width: 70%;
 		margin: 0 auto;
 		display: flex;
 		align-items: center;
-		@include adaptiveValue('gap', 125, 10, 1600, 767.98, 1);
+		justify-content: space-between;
+		gap: rem(35);
+
+		@media (max-width: $tablet) {
+			max-width: 85%;
+		}
 
 		@media (max-width: $mobile) {
 			flex-direction: column-reverse;
@@ -449,6 +467,7 @@
 
 	// .author-block__content
 	&__content {
+		flex: 0 0 58%;
 		@media (max-width: $mobile) {
 			display: flex;
 			flex-direction: column;
@@ -459,14 +478,14 @@
 	// .author-block__caption
 	&__caption {
 		&:not(:last-child) {
-			@include adaptiveValue('margin-bottom', 40, 10, 1600, 767.98, 1);
+			@include adaptiveValue('margin-bottom', 25, 15, 1600, 767.98, 1);
 		}
 	}
 
 	// .author-block__text
 	&__text {
 		&:not(:last-child) {
-			@include adaptiveValue('margin-bottom', 48, 24, 1600, 767.98, 1);
+			@include adaptiveValue('margin-bottom', 40, 20, 1600, 767.98, 1);
 		}
 	}
 
@@ -488,10 +507,6 @@
 
 	// .author-block__image
 	&__image {
-		flex: 1 0 50%;
-		display: flex;
-		justify-content: flex-end;
-
 		img {
 			max-width: 100%;
 		}
@@ -501,8 +516,8 @@
 //========================================================================================================================================================
 
 .eighth-block {
-	@include adaptiveValue('padding-top', 80, 36, 1600, 767.98, 1);
-	@include adaptiveValue('padding-bottom', 60, 36, 1600, 767.98, 1);
+	@include adaptiveValue('padding-top', 80, 40, 1600, 767.98, 1);
+	@include adaptiveValue('padding-bottom', 60, 40, 1600, 767.98, 1);
 	background-color: #eeeeee;
 
 	// .eighth-block__container
@@ -572,26 +587,112 @@
 
 //========================================================================================================================================================
 
-.faq-block {
+.reviews {
 	@include adaptiveValue('padding-top', 40, 30, 1600, 767.98, 1);
-	@include adaptiveValue('padding-bottom', 60, 20, 1600, 767.98, 1);
+	@include adaptiveValue('padding-bottom', 40, 30, 1600, 767.98, 1);
 
-	// .faq-block__container
+	// .reviews__container
 	&__container {
 	}
 
-	// .faq-block__title
+	// .reviews__title
+	&__title {
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 80, 35, 1600, 767.98, 1);
+		}
+	}
+
+	// .reviews__slider
+	&__slider {
+	}
+
+	// .reviews__wrapper
+	&__wrapper {
+	}
+
+	// .reviews__slide
+	&__slide {
+	}
+}
+
+.item-reviews {
+	position: relative;
+	min-height: rem(200);
+	@include adaptiveValue('min-height', 200, 70);
+	// .item-reviews__image-ibg
+	&__image-ibg {
+		@include adaptiveValue('width', 140, 65, 1600, 767.98, 1);
+		@include adaptiveValue('height', 140, 65, 1600, 767.98, 1);
+		border-radius: rem(50%);
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	// .item-reviews__content
+	&__content {
+		background-color: $blue;
+		border-radius: rem(20);
+		max-width: percent(460, 530);
+		height: 100%;
+		margin-left: auto;
+		padding: rem(50) rem(38) rem(50) rem(90);
+
+		@include adaptiveValue('padding-top', 50, 12, 1600, 767.98, 1);
+		@include adaptiveValue('padding-right', 38, 8, 1600, 767.98, 1);
+		@include adaptiveValue('padding-bottom', 50, 8, 1600, 767.98, 1);
+		@include adaptiveValue('padding-left', 90, 40, 1600, 767.98, 1);
+	}
+
+	// .item-reviews__title
+	&__title {
+		font-weight: 700;
+		@include adaptiveValue('font-size', 20, 14);
+		line-height: math.div(22, 20);
+
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 12, 5, 1600, 767.98, 1);
+		}
+
+		@media (max-width: $mobile) {
+			text-align: left;
+		}
+	}
+
+	// .item-reviews__text
+	&__text {
+		@include adaptiveValue('font-size', 16, 12);
+		line-height: math.div(18, 16);
+
+		@media (max-width: $mobile) {
+			text-align: left;
+		}
+	}
+}
+
+//========================================================================================================================================================
+
+.faq {
+	@include adaptiveValue('padding-top', 40, 30, 1600, 767.98, 1);
+	@include adaptiveValue('padding-bottom', 60, 20, 1600, 767.98, 1);
+
+	// .faq__container
+	&__container {
+	}
+
+	// .faq__title
 	&__title {
 		&:not(:last-child) {
 			@include adaptiveValue('margin-bottom', 60, 35, 1600, 767.98, 1);
 		}
 	}
 
-	// .faq-block__body
+	// .faq__body
 	&__body {
 	}
 
-	// .faq-block__content
+	// .faq__content
 	&__content {
 	}
 }
@@ -664,15 +765,15 @@
 
 //========================================================================================================================================================
 
-.promo-block {
+.promo {
 	@include adaptiveValue('padding-top', 60, 20, 1600, 767.98, 1);
 	@include adaptiveValue('padding-bottom', 120, 40, 1600, 767.98, 1);
 
-	// .promo-block__container
+	// .promo__container
 	&__container {
 	}
 
-	// .promo-block__body
+	// .promo__body
 	&__body {
 		background-color: #cde2f5;
 		border-radius: rem(20);
@@ -688,7 +789,7 @@
 		}
 	}
 
-	// .promo-block__image
+	// .promo__image
 	&__image {
 		flex: 1 0 40%;
 
@@ -701,7 +802,7 @@
 		}
 	}
 
-	// .promo-block__content
+	// .promo__content
 	&__content {
 		@media (max-width: $mobile) {
 			display: flex;
@@ -710,18 +811,18 @@
 		}
 	}
 
-	// .promo-block__caption
+	// .promo__caption
 	&__caption {
 		&:not(:last-child) {
 			@include adaptiveValue('margin-bottom', 28, 16, 1600, 767.98, 1);
 		}
 	}
 
-	// .promo-block__price
+	// .promo__price
 	&__price {
 	}
 
-	// .promo-block__buttons
+	// .promo__buttons
 	&__buttons {
 	}
 }

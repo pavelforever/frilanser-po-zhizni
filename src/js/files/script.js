@@ -4,12 +4,12 @@ import { isMobile } from './functions.js';
 import { flsModules } from './modules.js';
 
 const blocks = document.querySelectorAll('section');
+const header = document.querySelector('header');
 // window.getComputedStyle(el).backgroundColor;
 
 document.addEventListener('watcherCallback', function (e) {
 	const entry = e.detail.entry;
 	const targetElement = entry.target;
-	const header = document.querySelector('header');
 
 	blocks.forEach(block => {
 		if (targetElement.classList.contains('_watcher-view')) {

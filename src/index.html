@@ -146,18 +146,18 @@
 					</div>
 				</section>
 
-				<section class="author-block">
-					<div class="author-block__container">
-						<div class="author-block__body">
-							<div class="author-block__content">
-								<h3 class="author-block__caption caption">Автор курса - Юлия Нестерова</h3>
-								<p class="author-block__text text">
+				<section class="author">
+					<div class="author__container">
+						<div class="author__body">
+							<div class="author__content">
+								<h3 class="author__caption caption">Автор курса - Юлия Нестерова</h3>
+								<p class="author__text text">
 									Юлия - методист физической терапии, реабилитолог.<br>
 									За 7 лет работы помогла более 1000 пациентам избавиться от болей в спине.
 								</p>
-								<button class="author-block__btn" data-popup="#author">Подробнее об авторе курса</button>
+								<button class="author__btn" data-popup="#author">Подробнее об авторе курса</button>
 							</div>
-							<div class="author-block__image">
+							<div class="author__image">
 								<img src="@img/author-block/image.png" alt="Image">
 							</div>
 						</div>
@@ -216,11 +216,54 @@
 					</div>
 				</section>
 
-				<section class="faq-block">
-					<div class="faq-block__container">
-						<h2 class="faq-block__title title center">Ответы на самые популярные вопросы</h2>
-						<div class="faq-block__body">
-							<div data-spollers data-one-spoller class="faq-block__content faq-spollers">
+				<section class="reviews">
+					<div class="reviews__container">
+						<h2 class="reviews__title title center">Отзывы</h2>
+						<div class="reviews__slider swiper">
+							<div class="reviews__wrapper swiper-wrapper">
+								<div class="reviews__slide swiper-slide item-reviews">
+									<div class="item-reviews__image-ibg">
+										<img src="@img/reviews/01.png" alt="image">
+									</div>
+									<div class="item-reviews__content">
+										<h3 class="item-reviews__title">Мария Петрова</h3>
+										<p class="item-reviews__text">
+											Количество мест ограничено! Ясность нашей позиции очевидна: высокое качество позиционных исследований.
+										</p>
+									</div>
+								</div>
+								<div class="reviews__slide swiper-slide item-reviews">
+									<div class="item-reviews__image-ibg">
+										<img src="@img/reviews/01.png" alt="image">
+									</div>
+									<div class="item-reviews__content">
+										<h3 class="item-reviews__title">Мария Петрова</h3>
+										<p class="item-reviews__text">
+											Количество мест ограничено!
+										</p>
+									</div>
+								</div>
+								<div class="reviews__slide swiper-slide item-reviews">
+									<div class="item-reviews__image-ibg">
+										<img src="@img/reviews/01.png" alt="image">
+									</div>
+									<div class="item-reviews__content">
+										<h3 class="item-reviews__title">Мария Петрова Мария Петров Мария Петров</h3>
+										<p class="item-reviews__text">
+											Количество мест ограничено! Ясность нашей позиции очевидна: высокое качество позиционных исследований.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="faq">
+					<div class="faq__container">
+						<h2 class="faq__title title center">Ответы на самые популярные вопросы</h2>
+						<div class="faq__body">
+							<div data-spollers data-one-spoller data-tabs-animate="100" class="faq-block__content faq-spollers">
 								<div class="faq-spollers__item">
 									<button type="button" data-spoller class="faq-spollers__title">
 										<span>Какое снаряжение нужно для прохождения курса?</span>
@@ -319,19 +362,19 @@
 					</div>
 				</section>
 
-				<section class="promo-block">
-					<div class="promo-block__container">
-						<div class="promo-block__body">
-							<div class="promo-block__image">
+				<section class="promo">
+					<div class="promo__container">
+						<div class="promo__body">
+							<div class="promo__image">
 								<img src="@img/promo-logo.png" alt="Image">
 							</div>
-							<div class="promo-block__content">
-								<h3 class="promo-block__caption caption">Приступайте к прохождению курса сейчас, и ваше состояние улучшиться уже через месяц</h3>
-								<div class="promo-block__price price-block">
+							<div class="promo__content">
+								<h3 class="promo__caption caption">Приступайте к прохождению курса сейчас, и ваше состояние улучшиться уже через месяц</h3>
+								<div class="promo__price price-block">
 									<div class="price-block__price">Цена курса 199BYN</div>
 									<span class="price-block__info">*за вечный доступ</span>
 								</div>
-								<div class="promo-block__buttons buttons-block">
+								<div class="promo__buttons buttons-block">
 									<button class="btn btn--black" data-popup="#form">Пройти курс</button>
 									<button class="btn" data-popup="#video" data-popup-youtube="UZJnb5x8au4">Видео о курсе</button>
 								</div>
