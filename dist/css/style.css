@@ -190,6 +190,161 @@ h6 {
   padding: 0 0.9375rem;
 }
 
+body::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.8s ease 0s;
+  -o-transition: opacity 0.8s ease 0s;
+  transition: opacity 0.8s ease 0s;
+  pointer-events: none;
+  z-index: 149;
+}
+
+.popup-show body::after {
+  opacity: 1;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 30px 10px;
+  -webkit-transition: visibility 0.8s ease 0s;
+  -o-transition: visibility 0.8s ease 0s;
+  transition: visibility 0.8s ease 0s;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.popup_show {
+  z-index: 150;
+  visibility: visible;
+  overflow: auto;
+  pointer-events: auto;
+}
+
+.popup_show .popup__content {
+  visibility: visible;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+
+.popup__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  align-items: center;
+}
+
+.popup__content {
+  visibility: hidden;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: -webkit-transform 0.3s ease 0s;
+  transition: -webkit-transform 0.3s ease 0s;
+  -o-transition: transform 0.3s ease 0s;
+  transition: transform 0.3s ease 0s;
+  transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
+  background-color: #ffffff;
+  padding: 20px;
+  width: 100%;
+  max-width: 900px;
+  border-radius: 10px;
+}
+
+.lock .popup__content {
+  visibility: visible;
+}
+
+.popup__content--form {
+  max-width: 800px;
+  padding: 2.25rem 0.625rem 3.4375rem;
+}
+
+.popup__content--thanks {
+  max-width: 800px;
+  padding: 5rem 1.25rem 1.5625rem;
+}
+
+.popup__content--author {
+  max-width: 500px;
+  padding: 3.125rem 1.25rem 3.4375rem;
+}
+
+.popup__content--author {
+  max-width: 500px;
+  padding: 3.125rem 1.25rem 3.4375rem;
+}
+
+.popup__content--video {
+  max-width: 70vw;
+  padding: 3.125rem;
+}
+
+.popup__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.popup__wrap--thanks {
+  margin-bottom: 5.625rem;
+}
+
+.popup__text--thanks {
+  margin: 2.5rem 0 1.5625rem;
+}
+
+.popup__close {
+  position: absolute;
+  width: 1.5625rem;
+  height: 1.5625rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 1.25rem;
+  right: 1.25rem;
+}
+
 [class*=-ibg] {
   position: relative;
 }
@@ -207,6 +362,24 @@ h6 {
 [class*=-ibg_contain] img {
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.popup__video-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+.popup__video-wrap video,
+.popup__video-wrap iframe,
+.popup__video-wrap object,
+.popup__video-wrap embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .btn {
@@ -475,6 +648,89 @@ h6 {
   line-height: 1.25;
 }
 
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+  max-width: 17.5rem;
+  margin: 0 auto;
+}
+
+@supports (margin-top: clamp( 1.5625rem , 3.3653412779rem  +  -1.8028412779vw , 2.5rem )) {
+  .form {
+    margin-top: clamp( 1.5625rem , 3.3653412779rem  +  -1.8028412779vw , 2.5rem );
+  }
+}
+
+@supports not (margin-top: clamp( 1.5625rem , 3.3653412779rem  +  -1.8028412779vw , 2.5rem )) {
+  .form {
+    margin-top: calc(
+			2.5rem + -0.9375 * (100vw - 47.99875rem) / 52.00125
+		);
+  }
+}
+
+.form__input {
+  font-weight: 500;
+  line-height: 1.25;
+  border: 2px solid #96bee2;
+  border-radius: 0.625rem;
+  padding: 1rem 1.5rem;
+}
+
+@supports (font-size: clamp( 0.75rem , 0.6524390244rem  +  0.487804878vw , 1rem )) {
+  .form__input {
+    font-size: clamp( 0.75rem , 0.6524390244rem  +  0.487804878vw , 1rem );
+  }
+}
+
+@supports not (font-size: clamp( 0.75rem , 0.6524390244rem  +  0.487804878vw , 1rem )) {
+  .form__input {
+    font-size: calc(
+			0.75rem + 0.25 * (100vw - 20rem) / 51.25
+		);
+  }
+}
+
+.form__input:focus {
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+.form__input::-webkit-input-placeholder {
+  color: #d8d8d8;
+}
+
+.form__input::-moz-placeholder {
+  color: #d8d8d8;
+}
+
+.form__input:-ms-input-placeholder {
+  color: #d8d8d8;
+}
+
+.form__input::-ms-input-placeholder {
+  color: #d8d8d8;
+}
+
+.form__input::placeholder {
+  color: #d8d8d8;
+}
+
+.form__input.error {
+  border: 2px solid red;
+}
+
+.form__button {
+  margin-top: 1rem;
+}
+
 .header {
   padding: 0.3125rem 0;
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -505,6 +761,10 @@ h6 {
 			1.875rem + 3.75 * (100vw - 47.99875rem) / 52.00125
 		);
   }
+}
+
+.header__logo img {
+  max-height: 2.875rem;
 }
 
 /*
@@ -1704,6 +1964,22 @@ h6 {
 @media (max-width: 47.99875em) {
   .main {
     padding-top: inherit;
+  }
+
+  .popup__content--form {
+    padding: 3.75rem 1.25rem 3.4375rem;
+  }
+
+  .popup__content--thanks {
+    padding: 5.625rem 1.25rem 1.5625rem;
+  }
+
+  .popup__content--author {
+    padding: 3.75rem 0.625rem 3.4375rem;
+  }
+
+  .popup__content--author {
+    padding: 3.75rem 0.625rem 3.4375rem;
   }
 
   .title {

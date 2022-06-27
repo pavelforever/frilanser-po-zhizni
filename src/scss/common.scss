@@ -139,3 +139,42 @@
 		line-height: math.div(15, 12);
 	}
 }
+
+//========================================================================================================================================================
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: rem(16);
+	max-width: rem(280);
+	margin: 0 auto;
+	@include adaptiveValue('margin-top', 25, 40, 1600, 767.98, 1);
+
+	// .form__input
+	&__input {
+		font-weight: 500;
+		@include adaptiveValue('font-size', 16, 12);
+		line-height: math.div(20, 16);
+		border: 2px solid $blue;
+		border-radius: rem(10);
+		padding: rem(16) rem(24);
+
+		&:focus {
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+			outline: none;
+		}
+
+		&::placeholder {
+			color: #d8d8d8;
+		}
+
+		&.error {
+			border: 2px solid red;
+		}
+	}
+
+	// .form__button
+	&__button {
+		margin-top: rem(16);
+	}
+}

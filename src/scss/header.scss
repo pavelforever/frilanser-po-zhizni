@@ -25,11 +25,9 @@
 
 	// .header__logo
 	&__logo {
-		// img {
-		// 	@media (max-width: $mobile) {
-		// 		max-height: rem(40);
-		// 	}
-		// }
+		img {
+			max-height: rem(46);
+		}
 	}
 
 	// .header__btn
