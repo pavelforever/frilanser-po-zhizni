@@ -602,6 +602,11 @@
 		}
 	}
 
+	// .reviews__block
+	&__block {
+		position: relative;
+	}
+
 	// .reviews__slider
 	&__slider {
 	}
@@ -617,8 +622,7 @@
 
 .item-reviews {
 	position: relative;
-	min-height: rem(200);
-	@include adaptiveValue('min-height', 200, 70);
+	@include adaptiveValue('min-height', 150, 70);
 	// .item-reviews__image-ibg
 	&__image-ibg {
 		@include adaptiveValue('width', 140, 65, 1600, 767.98, 1);
@@ -626,29 +630,27 @@
 		border-radius: rem(50%);
 		overflow: hidden;
 		position: absolute;
-		top: 0;
+		top: 10%;
 		left: 0;
 	}
 
 	// .item-reviews__content
 	&__content {
 		background-color: $blue;
-		border-radius: rem(20);
+		@include adaptiveValue('border-radius', 20, 10, 1600, 767.98, 1);
 		max-width: percent(460, 530);
 		height: 100%;
 		margin-left: auto;
-		padding: rem(50) rem(38) rem(50) rem(90);
-
 		@include adaptiveValue('padding-top', 50, 12, 1600, 767.98, 1);
 		@include adaptiveValue('padding-right', 38, 8, 1600, 767.98, 1);
-		@include adaptiveValue('padding-bottom', 50, 8, 1600, 767.98, 1);
+		@include adaptiveValue('padding-bottom', 50, 12, 1600, 767.98, 1);
 		@include adaptiveValue('padding-left', 90, 40, 1600, 767.98, 1);
 	}
 
 	// .item-reviews__title
 	&__title {
 		font-weight: 700;
-		@include adaptiveValue('font-size', 20, 14);
+		@include adaptiveValue('font-size', 20, 13);
 		line-height: math.div(22, 20);
 
 		&:not(:last-child) {

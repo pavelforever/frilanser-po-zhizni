@@ -187,3 +187,59 @@ section {
 		background-color: $green;
 	}
 }
+
+//========================================================================================================================================================
+
+.slider-arrow {
+	position: absolute;
+	width: rem(52);
+	height: rem(52);
+	border: 1px solid #d9d9d9;
+	border-radius: 50%;
+
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.2s ease 0s;
+
+	@media (any-hover: hover) {
+		&:hover {
+			transform: scale(1.1) translateY(-50%);
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+		}
+	}
+
+	@media (max-width: 1199) {
+		display: none;
+	}
+
+	&.swiper-button-disabled {
+		cursor: default;
+		@media (any-hover: hover) {
+			&:hover {
+				transform: scale(1) translateY(-50%);
+				box-shadow: none;
+			}
+		}
+
+		svg {
+			path {
+				stroke: #d9d9d9;
+			}
+		}
+	}
+
+	&--prev,
+	&--next {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	&--prev {
+		left: rem(-65);
+	}
+
+	&--next {
+		right: rem(-65);
+	}
+}

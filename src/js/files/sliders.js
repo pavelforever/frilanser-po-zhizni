@@ -75,20 +75,21 @@ function initSliders() {
 
 			// Кнопки "влево/вправо"
 			navigation: {
-				prevEl: '.swiper-button-prev',
-				nextEl: '.swiper-button-next',
+				prevEl: '.reviews-arrow-prev',
+				nextEl: '.reviews-arrow-next',
 			},
 
 			// Брейкпоинты
 
 			breakpoints: {
-				320: {
+				0: {
 					slidesPerView: 1.2,
 					spaceBetween: 10,
 				},
 
 				479.98: {
-					slidesPerView: 2,
+					slidesPerView: 1.6,
+					spaceBetween: 15,
 				},
 
 				767.68: {
@@ -96,7 +97,9 @@ function initSliders() {
 					spaceBetween: 20,
 				},
 
-				992: {},
+				991.98: {
+					spaceBetween: 50,
+				},
 				1268: {},
 			},
 

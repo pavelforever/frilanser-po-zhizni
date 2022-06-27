@@ -3640,22 +3640,25 @@
             autoHeight: false,
             speed: 800,
             navigation: {
-                prevEl: ".swiper-button-prev",
-                nextEl: ".swiper-button-next"
+                prevEl: ".reviews-arrow-prev",
+                nextEl: ".reviews-arrow-next"
             },
             breakpoints: {
-                320: {
+                0: {
                     slidesPerView: 1.2,
                     spaceBetween: 10
                 },
                 479.98: {
-                    slidesPerView: 2
+                    slidesPerView: 1.6,
+                    spaceBetween: 15
                 },
                 767.68: {
                     slidesPerView: 2,
                     spaceBetween: 20
                 },
-                992: {},
+                991.98: {
+                    spaceBetween: 50
+                },
                 1268: {}
             },
             on: {}
