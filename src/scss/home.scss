@@ -636,7 +636,7 @@
 
 	// .item-reviews__content
 	&__content {
-		background-color: $blue;
+		background-color: #cde2f5;
 		@include adaptiveValue('border-radius', 20, 10, 1600, 767.98, 1);
 		max-width: percent(460, 530);
 		height: 100%;
