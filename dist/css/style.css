@@ -729,6 +729,13 @@ body::after {
   margin-top: 1rem;
 }
 
+header,
+section {
+  -webkit-transition: background-color 0.4s ease 0s;
+  -o-transition: background-color 0.4s ease 0s;
+  transition: background-color 0.4s ease 0s;
+}
+
 header.bg-green,
 section.bg-green {
   background-color: #96bee2;
