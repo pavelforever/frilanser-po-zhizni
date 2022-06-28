@@ -2225,7 +2225,7 @@ section.bg-green {
   }
 }
 
-@media (max-width: 1199) {
+@media (max-width: 1300px) {
   .slider-arrow {
     display: none;
   }
