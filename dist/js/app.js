@@ -4125,21 +4125,8 @@
             }));
         }
     }), 0);
-    const blocks = document.querySelectorAll("section");
-    const header = document.querySelector("header");
-    document.addEventListener("watcherCallback", (function(e) {
-        const entry = e.detail.entry;
-        const targetElement = entry.target;
-        blocks.forEach((block => {
-            if (targetElement.classList.contains("_watcher-view")) {
-                block.classList.add("bg-green");
-                header.classList.add("bg-green");
-            } else {
-                block.classList.remove("bg-green");
-                header.classList.remove("bg-green");
-            }
-        }));
-    }));
+    document.querySelectorAll("section");
+    document.querySelector("header");
     window["FLS"] = false;
     isWebp();
     spollers();
