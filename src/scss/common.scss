@@ -246,3 +246,14 @@ section {
 }
 
 //========================================================================================================================================================
+._anim-show {
+	transform: translateY(120%);
+	opacity: 0;
+	transition: all 0.3s ease 0s;
+}
+
+._anim-show._watcher-view,
+._watcher-view ._anim-show {
+	transform: translateY(0px);
+	opacity: 1;
+}
