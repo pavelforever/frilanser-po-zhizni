@@ -790,9 +790,9 @@ section.bg {
       -ms-transform: translateY(120%);
           transform: translateY(120%);
   opacity: 0;
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.6s ease 0s;
+  -o-transition: all 0.6s ease 0s;
+  transition: all 0.6s ease 0s;
 }
 
 ._anim-show._watcher-view,
