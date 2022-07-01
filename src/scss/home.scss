@@ -1,9 +1,13 @@
 .first-screen {
 	@include adaptiveValue('padding-top', 120, 40, 1600, 767.98, 1);
 	@include adaptiveValue('padding-bottom', 120, 30, 1600, 767.98, 1);
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 
 	// .first-screen__container
 	&__container {
+		flex: 1 1 auto;
 		display: grid;
 		grid-template-columns: 1fr 50%;
 		align-items: center;
@@ -11,6 +15,8 @@
 
 		@media (max-width: $mobile) {
 			grid-template-columns: 1fr;
+			justify-content: center;
+			align-items: center;
 		}
 	}
 
@@ -20,6 +26,7 @@
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+			align-self: center;
 		}
 	}
 
@@ -56,6 +63,7 @@
 
 		@media (max-width: $mobile) {
 			justify-self: center;
+			align-self: flex-start;
 		}
 
 		img {

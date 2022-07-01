@@ -161,20 +161,6 @@ h6 {
   min-width: 0;
 }
 
-@supports (padding-top: clamp( 2.5rem , -0.9613651114rem  +  7.2113651114vw , 6.25rem )) {
-  .main {
-    padding-top: clamp( 2.5rem , -0.9613651114rem  +  7.2113651114vw , 6.25rem );
-  }
-}
-
-@supports not (padding-top: clamp( 2.5rem , -0.9613651114rem  +  7.2113651114vw , 6.25rem )) {
-  .main {
-    padding-top: calc(
-			2.5rem + 3.75 * (100vw - 47.99875rem) / 52.00125
-		);
-  }
-}
-
 /*
 (i) Стили будут применяться ко 
 всем классам содержащим *__container
@@ -930,6 +916,17 @@ section.bg {
   transition: all 0.2s ease 0s;
 }
 
+.first-screen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+}
+
 @supports (padding-top: clamp( 2.5rem , -2.1151534819rem  +  9.6151534819vw , 7.5rem )) {
   .first-screen {
     padding-top: clamp( 2.5rem , -2.1151534819rem  +  9.6151534819vw , 7.5rem );
@@ -959,6 +956,9 @@ section.bg {
 }
 
 .first-screen__container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 50%;
@@ -2272,10 +2272,6 @@ section.bg {
 }
 
 @media (max-width: 47.99875em) {
-  .main {
-    padding-top: inherit;
-  }
-
   .popup__content--form {
     padding: 3.75rem 1.25rem 3.4375rem;
   }
@@ -2351,6 +2347,12 @@ section.bg {
   .first-screen__container {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 
   .first-screen__content {
@@ -2364,6 +2366,9 @@ section.bg {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
 
   .first-screen__btn {
@@ -2373,6 +2378,8 @@ section.bg {
   .first-screen__image {
     -ms-grid-column-align: center;
         justify-self: center;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
   }
 
   .second-block__container {
