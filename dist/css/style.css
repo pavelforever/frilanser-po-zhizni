@@ -1511,13 +1511,11 @@
   background-position: -5632px 0px;
 }
 
-.no-webp .iti__flag {
-  background-image: url("../img/flags.png"); }
-
 .iti__flag {
   height: 15px;
   -webkit-box-shadow: 0px 0px 1px 0px #888;
           box-shadow: 0px 0px 1px 0px #888;
+  background-image: url("../img/flags.png");
   background-repeat: no-repeat;
   background-color: #DBDBDB;
   background-position: 20px 0;
@@ -1575,14 +1573,6 @@
   src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-SemiBoldItalic.woff2") format("woff2"), url("../fonts/Montserrat-SemiBoldItalic.woff") format("woff");
-  font-weight: 400;
-  font-style: italic;
 }
 
 * {
@@ -1895,7 +1885,7 @@ body::after {
 }
 
 .btn {
-  font-family: Commissioner;
+  font-family: "Commissioner";
   font-weight: 500;
   line-height: 1.25;
   display: -webkit-inline-box;
@@ -1988,7 +1978,7 @@ body::after {
 }
 
 .title {
-  font-family: Commissioner;
+  font-family: "Commissioner";
   font-weight: 800;
   line-height: 1.2222222222;
 }
@@ -2217,9 +2207,9 @@ section.bg {
 }
 
 ._anim-show {
-  -webkit-transform: translateY(50%);
-      -ms-transform: translateY(50%);
-          transform: translateY(50%);
+  -webkit-transform: translateY(30%);
+      -ms-transform: translateY(30%);
+          transform: translateY(30%);
   opacity: 0;
   -webkit-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
@@ -2324,6 +2314,7 @@ section.bg {
 }
 
 .iti--separate-dial-code .iti__selected-flag {
+  font-weight: 500;
   color: #212121;
   background: transparent;
   padding-top: 12px;
@@ -2332,8 +2323,23 @@ section.bg {
   padding-right: 12px;
 }
 
-.no-webp .iti__flag {
-  background-image: url("../img/flags.png"); }
+@supports (font-size: clamp( 0.75rem , 0.6524390244rem  +  0.487804878vw , 1rem )) {
+  .iti--separate-dial-code .iti__selected-flag {
+    font-size: clamp( 0.75rem , 0.6524390244rem  +  0.487804878vw , 1rem );
+  }
+}
+
+@supports not (font-size: clamp( 0.75rem , 0.6524390244rem  +  0.487804878vw , 1rem )) {
+  .iti--separate-dial-code .iti__selected-flag {
+    font-size: calc(
+			0.75rem + 0.25 * (100vw - 20rem) / 51.25
+		);
+  }
+}
+
+.iti__flag {
+  background-image: url("../img/flags.png");
+}
 
 /* wordpress styles*/
 
@@ -3195,7 +3201,6 @@ input.wpcf7-not-valid {
 }
 
 .author__btn {
-  font-style: italic;
   font-weight: 600;
   line-height: 1.2;
   text-decoration: underline;
@@ -3433,7 +3438,6 @@ input.wpcf7-not-valid {
 }
 
 .item-reviews__content {
-  background-color: #cde2f5;
   max-width: 86.7924528302%;
   height: 100%;
   margin-left: auto;
@@ -4152,11 +4156,13 @@ input.wpcf7-not-valid {
     background-size: 5652px 15px;
   }
 
-  .no-webp .iti__flag {
-    background-image: url("../img/flags@2x.png"); }
+  .iti__flag {
+    background-image: url("../img/flags@2x.png");
+  }
 
-  .no-webp .iti__flag {
-    background-image: url("../img/flags@2x.png"); }
+  .iti__flag {
+    background-image: url("../img/flags@2x.png");
+  }
 }
 
 @media (any-hover: hover) {
@@ -4200,18 +4206,4 @@ input.wpcf7-not-valid {
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   }
-}
-
-.webp .iti__flag { background-image: url(../img/flags.webp); }
-
-.webp .iti__flag { background-image: url(../img/flags.webp); }
-
-@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
-
-  .webp .iti__flag { background-image: url(../img/flags@2x.webp); }
-}
-
-@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
-
-  .webp .iti__flag { background-image: url(../img/flags@2x.webp); }
 }

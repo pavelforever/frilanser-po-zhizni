@@ -498,7 +498,6 @@
 
 	// .author-block__btn
 	&__btn {
-		font-style: italic;
 		font-weight: 600;
 		@include adaptiveValue('font-size', 20, 12);
 		line-height: math.div(24, 20);
@@ -643,7 +642,6 @@
 
 	// .item-reviews__content
 	&__content {
-		background-color: #cde2f5;
 		@include adaptiveValue('border-radius', 20, 10, 1600, 767.98, 1);
 		max-width: percent(460, 530);
 		height: 100%;

@@ -1,5 +1,5 @@
 .btn {
-	font-family: Commissioner;
+	font-family: 'Commissioner';
 	font-weight: 500;
 	@include adaptiveValue('font-size', 16, 12, 1600, 767.98, 1);
 	line-height: math.div(20, 16);
@@ -45,7 +45,7 @@
 //========================================================================================================================================================
 
 .title {
-	font-family: Commissioner;
+	font-family: 'Commissioner';
 	font-weight: 800;
 	@include adaptiveValue('font-size', 36, 20);
 	line-height: math.div(44, 36);
@@ -208,7 +208,7 @@ section {
 
 //========================================================================================================================================================
 ._anim-show {
-	transform: translateY(50%);
+	transform: translateY(30%);
 	opacity: 0;
 	transition: all 0.5s ease 0s;
 }
@@ -270,6 +270,8 @@ section {
 }
 
 .iti--separate-dial-code .iti__selected-flag {
+	font-weight: 500;
+	@include adaptiveValue('font-size', 16, 12);
 	color: $mainColor;
 	background: transparent;
 	padding-top: 12px;
