@@ -14,6 +14,7 @@
 // Включить/выключить FLS (Full Logging System) (в работе)
 window['FLS'] = false;
 
+import 'intl-tel-input/build/css/intlTelInput.css';
 // Подключение основного файла стилей
 import '../scss/style.scss';
 
@@ -106,6 +107,7 @@ flsForms.formFieldsInit({
 Сниппет(HTML):
 */
 // import "./files/forms/inputmask.js";
+import './files/forms/phonemask.js';
 
 /* Модуль работы с ползунком */
 /*
