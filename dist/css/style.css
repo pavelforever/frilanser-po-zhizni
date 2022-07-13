@@ -4171,6 +4171,10 @@ input.wpcf7-not-valid {
     gap: 1.25rem;
   }
 
+  .promo__image-ibg {
+    width: 100%;
+  }
+
   .promo__content {
     display: -webkit-box;
     display: -ms-flexbox;

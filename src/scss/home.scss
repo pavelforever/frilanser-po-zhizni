@@ -801,6 +801,10 @@
 		flex: 1 0 40%;
 		padding-bottom: percent(340, 1110);
 
+		@media (max-width: $mobile) {
+			width: 100%;
+		}
+
 		img {
 			object-fit: contain;
 		}
