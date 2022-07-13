@@ -1,14 +1,6 @@
 .first-screen {
 	@include adaptiveValue('padding-top', 120, 40, 1600, 767.98, 1);
 	@include adaptiveValue('padding-bottom', 120, 30, 1600, 767.98, 1);
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-
-	@media (max-width: $tablet) {
-		display: block;
-		min-height: auto;
-	}
 
 	// .first-screen__container
 	&__container {
@@ -61,16 +53,12 @@
 		}
 	}
 
-	// .first-screen__image
-	&__image {
-		justify-self: end;
-
-		@media (max-width: $mobile) {
-			justify-self: center;
-		}
+	// .first-screen__image-ibg
+	&__image-ibg {
+		padding-bottom: percent(423, 528);
 
 		img {
-			max-width: 100%;
+			object-fit: contain;
 		}
 	}
 }
@@ -86,6 +74,7 @@
 	&__container {
 		display: grid;
 		grid-template-columns: 1fr 50%;
+		align-items: flex-start;
 		@include adaptiveValue('gap', 80, 30, 1600, 767.98, 1);
 
 		@media (max-width: $mobile) {
@@ -121,13 +110,11 @@
 	}
 
 	// .second-block__image
-	&__image {
-		@media (max-width: $mobile) {
-			justify-self: center;
-		}
+	&__image-ibg {
+		padding-bottom: percent(449, 638);
 
 		img {
-			max-width: 100%;
+			object-fit: contain;
 		}
 	}
 }
@@ -233,14 +220,6 @@
 	background-color: $green;
 	@include adaptiveValue('padding-top', 100, 40, 1600, 767.98, 1);
 	@include adaptiveValue('padding-bottom', 100, 40, 1600, 767.98, 1);
-	// transform: translateY(50%);
-	// opacity: 0;
-	// transition: all 0.8s ease 0s;
-
-	// &._watcher-view {
-	// 	transform: translateY(0px);
-	// 	opacity: 1;
-	// }
 
 	// .fourth-block__container
 	&__container {
@@ -296,10 +275,13 @@
 		}
 	}
 
-	// .fourth-block__image
-	&__image {
+	// .fourth-block__image-ibg
+	&__image-ibg {
+		width: rem(185);
+		height: rem(390);
+
 		img {
-			max-width: 100%;
+			object-fit: contain;
 		}
 	}
 
@@ -365,10 +347,13 @@
 	&__text {
 	}
 
-	// .fifth-block__image
-	&__image {
+	// .fifth-block__image-ibg
+	&__image-ibg {
+		width: rem(185);
+		height: rem(390);
+
 		img {
-			max-width: 100%;
+			object-fit: contain;
 		}
 	}
 }
@@ -405,8 +390,19 @@
 
 	// .sixth-block__image
 	&__image {
+		max-width: rem(290);
 		img {
 			max-width: 100%;
+		}
+	}
+
+	// .sixth-block__image-ibg
+	&__image-ibg {
+		width: rem(290);
+		height: rem(390);
+
+		img {
+			object-fit: contain;
 		}
 	}
 
@@ -511,10 +507,13 @@
 		}
 	}
 
-	// .author-block__image
-	&__image {
+	// .author-block__image-ibg
+	&__image-ibg {
+		width: rem(290);
+		padding-bottom: 60%;
+
 		img {
-			max-width: 100%;
+			object-fit: contain;
 		}
 	}
 }
@@ -629,6 +628,7 @@
 .item-reviews {
 	position: relative;
 	@include adaptiveValue('min-height', 150, 70);
+
 	// .item-reviews__image-ibg
 	&__image-ibg {
 		@include adaptiveValue('width', 140, 65, 1600, 767.98, 1);
@@ -797,15 +797,12 @@
 	}
 
 	// .promo__image
-	&__image {
+	&__image-ibg {
 		flex: 1 0 40%;
-
-		@media (max-width: $mobile) {
-			padding: 0 rem(50);
-		}
+		padding-bottom: percent(340, 1110);
 
 		img {
-			max-width: 100%;
+			object-fit: contain;
 		}
 	}
 

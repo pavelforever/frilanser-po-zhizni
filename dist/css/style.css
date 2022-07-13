@@ -1680,6 +1680,20 @@ h6 {
   min-width: 0;
 }
 
+@supports (padding-top: clamp( 2.5rem , -0.9613651114rem  +  7.2113651114vw , 6.25rem )) {
+  .main {
+    padding-top: clamp( 2.5rem , -0.9613651114rem  +  7.2113651114vw , 6.25rem );
+  }
+}
+
+@supports not (padding-top: clamp( 2.5rem , -0.9613651114rem  +  7.2113651114vw , 6.25rem )) {
+  .main {
+    padding-top: calc(
+			2.5rem + 3.75 * (100vw - 47.99875rem) / 52.00125
+		);
+  }
+}
+
 /*
 (i) Стили будут применяться ко 
 всем классам содержащим *__container
@@ -1704,9 +1718,9 @@ body::after {
   top: 0;
   left: 0;
   opacity: 0;
-  -webkit-transition: opacity 0.8s ease 0s;
-  -o-transition: opacity 0.8s ease 0s;
-  transition: opacity 0.8s ease 0s;
+  -webkit-transition: opacity 0.4s ease 0s;
+  -o-transition: opacity 0.4s ease 0s;
+  transition: opacity 0.4s ease 0s;
   pointer-events: none;
   z-index: 149;
 }
@@ -1722,9 +1736,9 @@ body::after {
   bottom: 0;
   right: 0;
   padding: 30px 10px;
-  -webkit-transition: visibility 0.8s ease 0s;
-  -o-transition: visibility 0.8s ease 0s;
-  transition: visibility 0.8s ease 0s;
+  -webkit-transition: visibility 0.4s ease 0s;
+  -o-transition: visibility 0.4s ease 0s;
+  transition: visibility 0.4s ease 0s;
   visibility: hidden;
   pointer-events: none;
 }
@@ -1771,11 +1785,11 @@ body::after {
   -webkit-transform: scale(0);
       -ms-transform: scale(0);
           transform: scale(0);
-  -webkit-transition: -webkit-transform 0.3s ease 0s;
-  transition: -webkit-transform 0.3s ease 0s;
-  -o-transition: transform 0.3s ease 0s;
-  transition: transform 0.3s ease 0s;
-  transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
+  -webkit-transition: -webkit-transform 0.1s ease 0s;
+  transition: -webkit-transform 0.1s ease 0s;
+  -o-transition: transform 0.1s ease 0s;
+  transition: transform 0.1s ease 0s;
+  transition: transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s;
   background-color: #ffffff;
   padding: 20px;
   width: 100%;
@@ -2225,14 +2239,6 @@ section.bg {
 }
 
 .form-popup {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 1rem;
   max-width: 17.5rem;
   margin: 0 auto;
 }
@@ -2259,6 +2265,7 @@ section.bg {
   border: 2px solid #96bee2;
   border-radius: 0.625rem;
   padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
 }
 
 @supports (font-size: clamp( 0.75rem , 0.6524390244rem  +  0.487804878vw , 1rem )) {
@@ -2305,8 +2312,49 @@ section.bg {
   border: 2px solid red;
 }
 
+.form-popup__checkbox {
+  margin: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 0.3125rem;
+}
+
+.form-popup__checkbox label {
+  line-height: 1.1333333333;
+}
+
+@supports (font-size: clamp( 0.75rem , 0.7012195122rem  +  0.243902439vw , 0.875rem )) {
+  .form-popup__checkbox label {
+    font-size: clamp( 0.75rem , 0.7012195122rem  +  0.243902439vw , 0.875rem );
+  }
+}
+
+@supports not (font-size: clamp( 0.75rem , 0.7012195122rem  +  0.243902439vw , 0.875rem )) {
+  .form-popup__checkbox label {
+    font-size: calc(
+			0.75rem + 0.125 * (100vw - 20rem) / 51.25
+		);
+  }
+}
+
+.form-popup__checkbox label a {
+  color: #96bee2;
+}
+
 .form-popup__button {
-  margin-top: 1rem;
+  display: block;
+  width: 100%;
+  margin: 1rem auto 0;
+  cursor: pointer;
+}
+
+.iti {
+  display: block;
+  max-width: 100%;
 }
 
 .iti__country-list {
@@ -2317,10 +2365,6 @@ section.bg {
   font-weight: 500;
   color: #212121;
   background: transparent;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 @supports (font-size: clamp( 0.75rem , 0.6524390244rem  +  0.487804878vw , 1rem )) {
@@ -2344,7 +2388,7 @@ section.bg {
 /* wordpress styles*/
 
 input.wpcf7-not-valid {
-  border: 1px solid #ff0008;
+  border: 2px solid #ff0008;
 }
 
 .wpcf7-response-output {
@@ -2445,13 +2489,11 @@ input.wpcf7-not-valid {
 }
 
 .footer__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  gap: 0.625rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9375rem;
 }
 
 .footer__text,
@@ -2477,21 +2519,12 @@ input.wpcf7-not-valid {
 }
 
 .footer__link {
+  -ms-grid-column-align: end;
+      justify-self: end;
   text-transform: uppercase;
   -webkit-transition: all 0.2s ease 0s;
   -o-transition: all 0.2s ease 0s;
   transition: all 0.2s ease 0s;
-}
-
-.first-screen {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  min-height: 100vh;
 }
 
 @supports (padding-top: clamp( 2.5rem , -2.1151534819rem  +  9.6151534819vw , 7.5rem )) {
@@ -2570,13 +2603,13 @@ input.wpcf7-not-valid {
   }
 }
 
-.first-screen__image {
-  -ms-grid-column-align: end;
-      justify-self: end;
+.first-screen__image-ibg {
+  padding-bottom: 80.1136363636%;
 }
 
-.first-screen__image img {
-  max-width: 100%;
+.first-screen__image-ibg img {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .second-block {
@@ -2616,6 +2649,9 @@ input.wpcf7-not-valid {
   display: grid;
   -ms-grid-columns: 1fr 50%;
   grid-template-columns: 1fr 50%;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 @supports (gap: clamp( 1.875rem , -1.0094709262rem  +  6.0094709262vw , 5rem )) {
@@ -2660,8 +2696,13 @@ input.wpcf7-not-valid {
   }
 }
 
-.second-block__image img {
-  max-width: 100%;
+.second-block__image-ibg {
+  padding-bottom: 70.3761755486%;
+}
+
+.second-block__image-ibg img {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 @supports (padding-top: clamp( 2.5rem , -2.1151534819rem  +  9.6151534819vw , 7.5rem )) {
@@ -2957,8 +2998,14 @@ input.wpcf7-not-valid {
   gap: 2.1875rem;
 }
 
-.fourth-block__image img {
-  max-width: 100%;
+.fourth-block__image-ibg {
+  width: 11.5625rem;
+  height: 24.375rem;
+}
+
+.fourth-block__image-ibg img {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .fourth-block__content {
@@ -3044,8 +3091,14 @@ input.wpcf7-not-valid {
   }
 }
 
-.fifth-block__image img {
-  max-width: 100%;
+.fifth-block__image-ibg {
+  width: 11.5625rem;
+  height: 24.375rem;
+}
+
+.fifth-block__image-ibg img {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .sixth-block {
@@ -3095,8 +3148,22 @@ input.wpcf7-not-valid {
   gap: 2.1875rem;
 }
 
+.sixth-block__image {
+  max-width: 18.125rem;
+}
+
 .sixth-block__image img {
   max-width: 100%;
+}
+
+.sixth-block__image-ibg {
+  width: 18.125rem;
+  height: 24.375rem;
+}
+
+.sixth-block__image-ibg img {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .sixth-block__content {
@@ -3223,8 +3290,14 @@ input.wpcf7-not-valid {
   }
 }
 
-.author__image img {
-  max-width: 100%;
+.author__image-ibg {
+  width: 18.125rem;
+  padding-bottom: 60%;
+}
+
+.author__image-ibg img {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .eighth-block {
@@ -3728,14 +3801,16 @@ input.wpcf7-not-valid {
   padding: 1.875rem 4.0625rem;
 }
 
-.promo__image {
+.promo__image-ibg {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 40%;
           flex: 1 0 40%;
+  padding-bottom: 30.6306306306%;
 }
 
-.promo__image img {
-  max-width: 100%;
+.promo__image-ibg img {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 @supports (margin-bottom: clamp( 1rem , 0.3077269777rem  +  1.4422730223vw , 1.75rem )) {
@@ -3825,25 +3900,6 @@ input.wpcf7-not-valid {
 }
 
 @media (max-width: 61.99875em) {
-@supports (padding-top: clamp( 2.5rem , -0.9613651114rem  +  7.2113651114vw , 6.25rem )) {
-    .main {
-      padding-top: clamp( 2.5rem , -0.9613651114rem  +  7.2113651114vw , 6.25rem );
-    }
-}
-
-@supports not (padding-top: clamp( 2.5rem , -0.9613651114rem  +  7.2113651114vw , 6.25rem )) {
-    .main {
-      padding-top: calc(
-			2.5rem + 3.75 * (100vw - 47.99875rem) / 52.00125
-		);
-    }
-}
-
-  .first-screen {
-    display: block;
-    min-height: auto;
-  }
-
   .fourth-block__body {
     max-width: 85%;
   }
@@ -3861,13 +3917,11 @@ input.wpcf7-not-valid {
   }
 }
 
-@media (max-width: 61.99875em) and (max-width: 47.99875em) {
+@media (max-width: 47.99875em) {
   .main {
     padding-top: inherit;
   }
-}
 
-@media (max-width: 47.99875em) {
   .popup__content--form {
     padding: 3.75rem 1.25rem 3.4375rem;
   }
@@ -3906,6 +3960,10 @@ input.wpcf7-not-valid {
     text-align: center;
   }
 
+  .text--left {
+    text-align: left;
+  }
+
   .buttons-block {
     row-gap: 0.625rem;
   }
@@ -3927,17 +3985,7 @@ input.wpcf7-not-valid {
   }
 
   .footer {
-    padding: 0.9375rem 0;
-  }
-
-  .footer__container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    padding: 2.8125rem 0 4.0625rem;
   }
 
   .first-screen__container {
@@ -3968,11 +4016,6 @@ input.wpcf7-not-valid {
     display: none;
   }
 
-  .first-screen__image {
-    -ms-grid-column-align: center;
-        justify-self: center;
-  }
-
   .second-block__container {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
@@ -3989,11 +4032,6 @@ input.wpcf7-not-valid {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-  }
-
-  .second-block__image {
-    -ms-grid-column-align: center;
-        justify-self: center;
   }
 
   .thirth-block__title {
@@ -4133,10 +4171,6 @@ input.wpcf7-not-valid {
     gap: 1.25rem;
   }
 
-  .promo__image {
-    padding: 0 3.125rem;
-  }
-
   .promo__content {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4148,6 +4182,23 @@ input.wpcf7-not-valid {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+}
+
+@media (max-width: 29.99875em) {
+  .footer__container {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .footer__text,
+  .footer__link {
+    text-align: center;
+  }
+
+  .footer__link {
+    -ms-grid-column-align: center;
+        justify-self: center;
   }
 }
 

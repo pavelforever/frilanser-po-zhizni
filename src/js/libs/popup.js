@@ -242,7 +242,7 @@ class Popup {
 				// YouTube
 				if (this.youTubeCode) {
 					const codeVideo = this.youTubeCode;
-					const urlVideo = `https://www.youtube.com/embed/${codeVideo}?rel=0&showinfo=0&autoplay=1`;
+					const urlVideo = `https://www.youtube-nocookie.com/embed/${codeVideo}`;
 					const iframe = document.createElement('iframe');
 					iframe.setAttribute('allowfullscreen', '');
 

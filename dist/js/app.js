@@ -4477,7 +4477,7 @@
                     if (this.targetOpen.element) {
                         if (this.youTubeCode) {
                             const codeVideo = this.youTubeCode;
-                            const urlVideo = `https://www.youtube.com/embed/${codeVideo}?rel=0&showinfo=0&autoplay=1`;
+                            const urlVideo = `https://www.youtube-nocookie.com/embed/${codeVideo}`;
                             const iframe = document.createElement("iframe");
                             iframe.setAttribute("allowfullscreen", "");
                             const autoplay = this.options.setAutoplayYoutube ? "autoplay;" : "";
@@ -4627,9 +4627,6 @@
             } else functions_FLS(`[gotoBlock]: Ой ой..Такого блока нет на странице: ${targetBlock}`);
         };
         var intl_tel_input = __webpack_require__(699);
-        __webpack_require__(125);
-        const inputMasks = document.querySelectorAll("input");
-        if (inputMasks.length) modules_flsModules.inputmask = Inputmask().mask(inputMasks);
         (function() {
             var aa = this || self;
             function k(a, b) {
@@ -6170,6 +6167,7 @@
                 INVALID_LENGTH: 5
             });
         })();
+        __webpack_require__(125);
         const inputsPhone = document.querySelectorAll("input[name=phone]");
         if (inputsPhone.length) inputsPhone.forEach((input => {
             intl_tel_input(input, {
@@ -6180,12 +6178,12 @@
                 utilsScript: utils_namespaceObject,
                 initialCountry: "by"
             });
-            Inputmask("99 999-99-99").mask(input);
             input.addEventListener("countrychange", (() => {
                 input.value = "";
                 const countryMask = input.placeholder.replace(/[0-9]/g, "9");
                 Inputmask(countryMask).mask(input);
             }));
+            Inputmask("99 999-99-99").mask(input);
         }));
         function ssr_window_esm_isObject(obj) {
             return null !== obj && "object" === typeof obj && "constructor" in obj && obj.constructor === Object;
@@ -9856,6 +9854,13 @@
                     header.classList.remove("bg");
                 }
             }));
+        }));
+        const wpcf7Elm = document.querySelector(".wpcf7");
+        if (wpcf7Elm) wpcf7Elm.addEventListener("wpcf7mailsent", (() => {
+            modules_flsModules.popup.close("#form");
+            setTimeout((() => {
+                modules_flsModules.popup.open("#thanks");
+            }), 500);
         }));
         window["FLS"] = false;
         isWebp();

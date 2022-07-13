@@ -76,6 +76,12 @@
 	@media (max-width: $mobile) {
 		text-align: center;
 	}
+
+	&--left {
+		@media (max-width: $mobile) {
+			text-align: left;
+		}
+	}
 }
 
 //========================================================================================================================================================
@@ -222,9 +228,9 @@ section {
 //========================================================================================================================================================
 
 .form-popup {
-	display: flex;
-	flex-direction: column;
-	gap: rem(16);
+	// display: flex;
+	// flex-direction: column;
+	// gap: rem(16);
 	max-width: rem(280);
 	margin: 0 auto;
 	@include adaptiveValue('margin-top', 25, 40, 1600, 767.98, 1);
@@ -239,6 +245,7 @@ section {
 		border: 2px solid $blue;
 		border-radius: rem(10);
 		padding: rem(16) rem(24);
+		margin-bottom: rem(16);
 
 		&:focus {
 			box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
@@ -254,15 +261,35 @@ section {
 		}
 	}
 
+	&__checkbox {
+		margin: rem(16) 0;
+		display: flex;
+		align-items: flex-start;
+		gap: rem(5);
+
+		label {
+			@include adaptiveValue('font-size', 14, 12);
+			line-height: math.div(17, 15);
+			a {
+				color: $blue;
+			}
+		}
+	}
+
 	// .form-popup__button
 	&__button {
-		margin-top: rem(16);
+		display: block;
+		width: 100%;
+		margin: rem(16) auto 0;
+		cursor: pointer;
 	}
 }
 
 //========================================================================================================================================================
 .iti {
+	display: block;
 	// display: block;
+	max-width: 100%;
 }
 
 .iti__country-list {
@@ -274,11 +301,6 @@ section {
 	@include adaptiveValue('font-size', 16, 12);
 	color: $mainColor;
 	background: transparent;
-	padding-top: 12px;
-	padding-bottom: 12px;
-	padding-left: 12px;
-	padding-right: 12px;
-	// bottom: 6px;
 }
 
 .iti__flag {
@@ -294,7 +316,7 @@ section {
 //========================================================================================================================================================
 /* wordpress styles*/
 input.wpcf7-not-valid {
-	border: 1px solid #ff0008;
+	border: 2px solid #ff0008;
 }
 
 .wpcf7-response-output {

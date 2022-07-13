@@ -73,6 +73,7 @@
 	},
 	"dependencies": {
 		"intl-tel-input": "^17.0.16",
+		"jquery": "^3.6.0",
 		"lozad": "^1.16.0",
 		"simplebar": "latest"
 	}

@@ -23,3 +23,16 @@ document.addEventListener('watcherCallback', function (e) {
 		}
 	});
 });
+
+//========================================================================================================================================================
+
+const wpcf7Elm = document.querySelector('.wpcf7');
+
+if (wpcf7Elm) {
+	wpcf7Elm.addEventListener('wpcf7mailsent', () => {
+		flsModules.popup.close('#form');
+		setTimeout(() => {
+			flsModules.popup.open('#thanks');
+		}, 500);
+	});
+}
