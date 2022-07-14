@@ -12,9 +12,12 @@
 		grid-template-columns: 1fr 1fr;
 		gap: rem(15);
 
-		@media (max-width: $mobileSmall) {
+		@media (max-width: $mobile) {
 			grid-template-columns: 1fr;
 		}
+	}
+
+	&__body {
 	}
 
 	&__text,
@@ -23,7 +26,7 @@
 		@include adaptiveValue('font-size', 12, 10);
 		line-height: math.div(14, 12);
 
-		@media (max-width: $mobileSmall) {
+		@media (max-width: $mobile) {
 			text-align: center;
 		}
 	}
@@ -38,7 +41,7 @@
 		text-transform: uppercase;
 		transition: all 0.2s ease 0s;
 
-		@media (max-width: $mobileSmall) {
+		@media (max-width: $mobile) {
 			justify-self: center;
 		}
 
@@ -47,5 +50,23 @@
 				transform: scale(1.02);
 			}
 		}
+	}
+}
+
+.logos-footer {
+	display: grid;
+	grid-template-columns: repeat(5, auto);
+	align-items: center;
+	justify-content: flex-end;
+	justify-items: end;
+	gap: rem(10);
+
+	img {
+		max-width: rem(50);
+	}
+
+	@media (max-width: $mobile) {
+		justify-content: center;
+		justify-items: center;
 	}
 }

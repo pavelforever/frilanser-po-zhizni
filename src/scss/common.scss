@@ -278,17 +278,21 @@ section {
 
 	// .form-popup__button
 	&__button {
-		display: block;
+		// display: block;
 		width: 100%;
+		min-height: rem(42) !important;
 		margin: rem(16) auto 0;
 		cursor: pointer;
+
+		@media (max-width: $mobile) {
+			padding: rem(15);
+		}
 	}
 }
 
 //========================================================================================================================================================
 .iti {
 	display: block;
-	// display: block;
 	max-width: 100%;
 }
 
